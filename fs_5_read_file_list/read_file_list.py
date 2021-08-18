@@ -19,3 +19,16 @@ def read_file_list(filename):
     # hint: when you read lines of files, there will be a "newline"
     # (end-of-line character) at the end of each line, and you want to
     # strip that off before you print it. Do some research on that!
+    # try:
+    #     f = open(filename)
+    #     for line in f:
+    #         print("-".format(line.strip()))  
+    # except FileNotFoundError:
+    #     print(f"No such file of drectory {filename}")
+    # finally:
+    #     f.close()
+        
+    with open(filename) as f:
+        for line in f:
+            line = line.strip()
+            print(f"- {line}")
