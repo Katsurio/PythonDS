@@ -10,3 +10,7 @@ def same_frequency(num1, num2):
         >>> same_frequency(1212, 2211)
         True
     """
+    n1 = sorted(f"{num1}")
+    n2 = sorted(f"{num2}")
+    
+    return True if n1 == n2 else False
