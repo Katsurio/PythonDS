@@ -13,3 +13,9 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    prev_num = None
+    for num in sorted(nums):
+        if prev_num == num:
+            return prev_num
+        prev_num = num
+    return None

@@ -14,4 +14,16 @@ def two_list_dictionary(keys, values):
 
         >>> two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4])
         {'a': 1, 'b': 2, 'c': 3}
-   """
+    """
+    new_values = values
+    
+    if len(keys) > len(values):
+        difference = len(keys) - len(values)
+        values.extend([None] * difference)
+        return dict(zip(keys, values))
+    
+    elif len(keys) < len(values):
+        return dict(zip(keys, new_values[:len(keys)]))
+    
+    else:
+        return dict(zip(keys, values))
